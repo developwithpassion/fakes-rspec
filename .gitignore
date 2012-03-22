@@ -1,0 +1,5 @@
+blah.rb
+*.gem
+.bundle
+Gemfile.lock
+pkg/*
