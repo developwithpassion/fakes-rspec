@@ -1,6 +1,9 @@
 #developwithpassion_fakes-rspec
 
-This is a library to aid in the usage of [developwithpassion_fakes](http://github.com/developwithpassion/developwithpassion_fakes) when using [RSpec](https://github.com/rspec/rspec). It basically just adds the convienience matcher: have_received which you would use as follows:
+This is a library to aid in the usage of [developwithpassion_fakes](http://github.com/developwithpassion/developwithpassion_fakes) when using [RSpec](https://github.com/rspec/rspec). It "basically" just adds 2 convienience matcher methods: 
+
+* have_received
+* have_received_occurences 
 
 ##Determining whether a call was made
 
@@ -31,7 +34,7 @@ it "should be able to determine if a call was made on a fake" do
   the_fake = fake
   fake.hello("World")
 
-  fake.should have_received_occurances(once,:hello) #true
+  fake.should have_received_occurences(once,:hello) #true
 end
 ```ruby
 
@@ -41,12 +44,12 @@ it "should be able to determine if a call was made on a fake" do
   the_fake = fake
   fake.hello("World")
 
-  fake.should have_received_occurances(once,:hello,"World") #true
-  fake.should have_received_occurances(once,:hello,"Earth") #false
+  fake.should have_received_occurences(once,:hello,"World") #true
+  fake.should have_received_occurences(once,:hello,"Earth") #false
 end
 ```ruby
 
-The first argument to have_received_occurances just needs to be an item that responds to the method: is_satisfied_by(count).
+The first argument to have_received_occurences just needs to be an item that responds to the method: is_satisfied_by(count).
 
 The library adds the following convenience factory methods to the ExampleGroup class:
 
