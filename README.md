@@ -30,7 +30,7 @@ Remember, that because it is just a matcher, to negate the matcher you can use t
 
 ###Determine whether a call was not made with a specific set of arguments:
 ```ruby
-it "should be able to determine if a call was made on a fake" do
+it "should be able to determine if a call was not made on a fake" do
   the_fake = fake
   fake.hello("World")
 
@@ -87,7 +87,7 @@ The library adds a couple of convenience factory methods to the ExampleGroup cla
 * at_least(times)
 * at_most(times)
 * exactly(times)
-* occurs(match_block) - Where match block is a proc/lambda that matches the signature lambda{|number| bool}
+* occurs(match_block) - Where match_block is a proc/lambda that matches the signature lambda{|number| bool}
 
 An example of using the occurs method would be as follows:
 
@@ -101,6 +101,22 @@ it "should be able to determine if a call was made on a fake" do
   fake.should have_received_occurences(occurs(|number| (1..3) === number),:hello) #true
 end
 ```
+##Installation
+```bash
+gem install developwithpassion_fakes-rspec
+```
+Or (preferably using bundler), in your gemfile:
+
+```ruby
+source "http://rubygems.org"
+gem 'developwithpassion_fakes-rspec'
+```
+
+When you install the gem it will install the rspec gem also, so you will immediately ready to go.
+
+##Contributing
+
+Feel free to fork this codebase and submit any pull requests you think would be useful. When you submit a pull request, make sure to include an accompanying test for the feature.
 
 
 [Develop With Passion®](http://www.developwithpassion.com)
