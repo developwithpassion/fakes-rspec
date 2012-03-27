@@ -28,6 +28,9 @@ module RSpec
       def exactly(times)
         return DevelopWithPassion::Fakes::RSpec::Occurances.exact(times)
       end
+      def occurs(match_block)
+        return DevelopWithPassion::Fakes::RSpec::Occurances.from_block(match_block)
+      end
     end
   end
 end

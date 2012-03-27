@@ -26,6 +26,18 @@ it "should be able to determine if a call was made on a fake" do
   fake.should have_received(:hello,"Other") #false
 end
 ```
+Remember, that because it is just a matcher, to negate the matcher you can use the should_not qualifier to do the opposite:
+
+###Determine whether a call was not made with a specific set of arguments:
+```ruby
+it "should be able to determine if a call was made on a fake" do
+  the_fake = fake
+  fake.hello("World")
+
+  fake.should_not have_received(:hello,"Other") #true
+end
+```
+
 ##Determining that a call was made a certain number of times
 
 ###Irrespective of arguments:
@@ -49,9 +61,22 @@ it "should be able to determine if a call was made on a fake" do
 end
 ```ruby
 
+Remember, that because it is just a matcher, to negate the matcher you can use the should_not qualifier to do the opposite:
+
+###Determine whether a call was not made a specific number of times with a specific set of arguments:
+```ruby
+it "should be able to determine if a call was made on a fake" do
+  the_fake = fake
+  fake.hello("World")
+
+  fake.should_not have_received_occurences(twice,:hello,"World") #true
+  fake.should_not have_received_occurences(twice,:hello) #true
+end
+```
+
 The first argument to have_received_occurences just needs to be an item that responds to the method: is_satisfied_by(count).
 
-The library adds the following convenience factory methods to the ExampleGroup class:
+The library adds a couple of convenience factory methods to the ExampleGroup class,to create the match specifications:
 
 * once
 * twice
@@ -62,6 +87,20 @@ The library adds the following convenience factory methods to the ExampleGroup c
 * at_least(times)
 * at_most(times)
 * exactly(times)
+* occurs(match_block) - Where match block is a proc/lambda that matches the signature lambda{|number| bool}
+
+An example of using the occurs method would be as follows:
+
+###Determine whether a call was not made between a certain number of times
+```ruby
+it "should be able to determine if a call was made on a fake" do
+  the_fake = fake
+  fake.hello("World")
+  fake.hello("Again")
+
+  fake.should have_received_occurences(occurs(|number| (1..3) === number),:hello) #true
+end
+```
 
 
 [Develop With Passion®](http://www.developwithpassion.com)
