@@ -22,7 +22,7 @@ When you install the gem it will install the rspec gem also, so you will immedia
 
 ##Determining whether a call was made
 
-###Determine whether a call was made irrespective of arguments:
+###Irrespective of arguments:
 ```ruby
 it "should be able to determine if a call was made on a fake" do
   the_fake = fake
@@ -31,7 +31,7 @@ it "should be able to determine if a call was made on a fake" do
   fake.should have_received(:hello) #true
 end
 ```
-###Determine whether a call was made with a specific set of arguments:
+###With a specific set of arguments:
 ```ruby
 it "should be able to determine if a call was made on a fake" do
   the_fake = fake
@@ -41,7 +41,7 @@ it "should be able to determine if a call was made on a fake" do
   fake.should have_received(:hello,"Other") #false
 end
 ```
-Remember, that because it is just a matcher, to negate the matcher you can use the should_not qualifier to do the opposite:
+##Remember, that because it is just a matcher, to negate the matcher you can use the should_not qualifier to do the opposite:
 
 ###Determine whether a call was not made with a specific set of arguments:
 ```ruby
