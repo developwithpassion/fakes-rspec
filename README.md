@@ -20,7 +20,54 @@ When you install the gem it will install the rspec gem also, so you will immedia
 
 ##Usage
 
+##Creating a fake
+
+###Using a let block
+```ruby
+describe "Some Feature" do
+  let(:my_fake){fake}
+end
+```
+
+###Inline
+```ruby
+describe "Some Feature" do
+  it "should be able to create a fake" do
+    item = fake
+  end
+end
+```
+##Configuring a fake with return values for calls
+
+###Irrespective of arguments:
+```ruby
+it "should be able to setup a fakes return values" do
+  the_fake = fake
+  fake.stub(:hello).and_return("World")
+
+  fake.hello.should == "World"
+  fake.hello("There").should == "World"
+end
+```
+
+###Caring about arguments:
+```ruby
+it "should be able to setup a fakes return values" do
+  the_fake = fake
+  fake.stub(:hello).with("There").and_return("World")
+  fake.stub(:hello).with("You").and_return("Again")
+
+  fake.stub(:hello).and_return("Does Not Matter") # when you use the catch_all, make sure that it is the last step used for a particular method (as above)
+
+  fake.hello("There").should == "World"
+  fake.hello("You").should == "Again"
+  fake.hello.should == "Does Not Matter"
+end
+```
+
 ##Determining whether a call was made
+
+One of the big strengths of this library compared to some of the other ruby isolation libraries is the ability to let you make assertions against the fake after the [subject] has run its code. The following examples demonstrate some typical usage scenarios:
 
 ###Irrespective of arguments:
 ```ruby
