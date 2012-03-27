@@ -41,7 +41,7 @@ it "should be able to determine if a call was made on a fake" do
   fake.should have_received(:hello,"Other") #false
 end
 ```
-##Remember, that because it is just a matcher, to negate the matcher you can use the should_not qualifier to do the opposite:
+Remember, that because it is just a matcher, to negate the matcher you can use the should_not qualifier to do the opposite:
 
 ###Determine whether a call was not made with a specific set of arguments:
 ```ruby
@@ -63,7 +63,7 @@ it "should be able to determine if a call was made on a fake" do
 
   fake.should have_received_occurences(once,:hello) #true
 end
-```ruby
+```
 
 ###Caring about arguments:
 ```ruby
@@ -74,7 +74,7 @@ it "should be able to determine if a call was made on a fake" do
   fake.should have_received_occurences(once,:hello,"World") #true
   fake.should have_received_occurences(once,:hello,"Earth") #false
 end
-```ruby
+```
 
 Remember, that because it is just a matcher, to negate the matcher you can use the should_not qualifier to do the opposite:
 
