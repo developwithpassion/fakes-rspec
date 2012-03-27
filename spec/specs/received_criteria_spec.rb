@@ -11,7 +11,7 @@ module DevelopWithPassion
 
             sut = ReceivedCriteria.new(item.received(:hello))
 
-            sut.is_satified_by.should be_true
+            sut.is_satisfied_by.should be_true
           end
         end
         context "when matching a call made with arguments" do
@@ -22,16 +22,16 @@ module DevelopWithPassion
           end
           context "and we care about the arguments it was called with" do
             it "should match if it received the correct call" do
-              @sut.is_satified_by("world").should be_true
+              @sut.is_satisfied_by("world").should be_true
             end
             it "should not match if the arguments provided are not in the call history" do
-              @sut.is_satified_by("yo").should be_false
+              @sut.is_satisfied_by("yo").should be_false
             end
             
           end
           context "and we don't care about the arguments it was called with" do
             it "should match if it received a call to the method" do
-              @sut.is_satified_by.should be_true
+              @sut.is_satisfied_by.should be_true
             end
           end
         end

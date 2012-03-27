@@ -6,7 +6,7 @@ module DevelopWithPassion
           @the_call = the_call
         end
 
-        def is_satified_by(*args)
+        def is_satisfied_by(*args)
           return false if @the_call == nil
           return args.count == 0 ? true : @the_call.called_with(*args) != nil
         end
