@@ -1,9 +1,6 @@
 #developwithpassion_fakes-rspec
 
-This is a library to aid in the usage of [developwithpassion_fakes](http://github.com/developwithpassion/developwithpassion_fakes) when using [RSpec](https://github.com/rspec/rspec). It "basically" just adds 2 convienience matcher methods: 
-
-* have_received
-* have_received_occurences 
+This is a library to aid in the usage of [developwithpassion_fakes](http://github.com/developwithpassion/developwithpassion_fakes) when using [RSpec](https://github.com/rspec/rspec). It adds a bunch of convienience methods and matchers to aid in the usage of the heavily AAA style isolation library.
 
 ##Installation
 ```bash
