@@ -5,6 +5,21 @@ This is a library to aid in the usage of [developwithpassion_fakes](http://githu
 * have_received
 * have_received_occurences 
 
+##Installation
+```bash
+gem install developwithpassion_fakes-rspec
+```
+Or (preferably using bundler), in your gemfile:
+
+```ruby
+source "http://rubygems.org"
+gem 'developwithpassion_fakes-rspec'
+```
+
+When you install the gem it will install the rspec gem also, so you will immediately ready to go.
+
+##Usage
+
 ##Determining whether a call was made
 
 ###Determine whether a call was made irrespective of arguments:
@@ -101,18 +116,6 @@ it "should be able to determine if a call was made on a fake" do
   fake.should have_received_occurences(occurs(|number| (1..3) === number),:hello) #true
 end
 ```
-##Installation
-```bash
-gem install developwithpassion_fakes-rspec
-```
-Or (preferably using bundler), in your gemfile:
-
-```ruby
-source "http://rubygems.org"
-gem 'developwithpassion_fakes-rspec'
-```
-
-When you install the gem it will install the rspec gem also, so you will immediately ready to go.
 
 ##Contributing
 
