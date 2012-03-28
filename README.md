@@ -13,7 +13,7 @@ source "http://rubygems.org"
 gem 'developwithpassion_fakes-rspec'
 ```
 
-When you install the gem it will install the rspec gem also, so you will immediately ready to go.
+When you install the gem it will install the rspec gem also, so you will be immediately ready to go.
 
 ##Usage
 
@@ -150,7 +150,7 @@ The library adds a couple of convenience factory methods to the ExampleGroup cla
 
 An example of using the occurs method would be as follows:
 
-###Determine whether a call was not made between a certain number of times
+###Determine whether a call was made between a certain number of times
 ```ruby
 it "should be able to determine if a call was made on a fake" do
   the_fake = fake
