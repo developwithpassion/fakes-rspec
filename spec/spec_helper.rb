@@ -1,5 +1,5 @@
-require 'developwithpassion_fakes'
+require 'fakes'
 
 Dir.chdir(File.join(File.dirname(__FILE__),"..,lib".split(','))) do
-  require 'rspec-fakes.rb'
+  require 'fakes-rspec.rb'
 end

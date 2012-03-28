@@ -1,5 +1,5 @@
-module RSpec
-  module Fakes
+module Fakes
+  module RSpec
     class ReceivedCriteria
       def initialize(the_call)
         @the_call = the_call

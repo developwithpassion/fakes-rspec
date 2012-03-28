@@ -1,7 +1,7 @@
 require 'spec_helper'
 
-module RSpec
-  module Fakes
+module Fakes
+  module RSpec
     describe Occurances do
       context "when creating an exact occurance matcher" do
         subject{Occurances.exact(1)}

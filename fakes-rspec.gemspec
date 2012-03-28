@@ -3,15 +3,15 @@ $:.push File.expand_path("../lib",__FILE__)
 require "core/version"
 
 Gem::Specification.new do |s|
-  s.name        = "rspec-fakes"
-  s.version     = RSpec::Fakes::VERSION
+  s.name        = "fakes-rspec"
+  s.version     = Fakes::RSpec::VERSION
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["Develop With Passion®"]
   s.email       = ["open_source@developwithpassion.com"]
   s.homepage    = "http://www.developwithpassion.com"
   s.summary     = %q{Utility functions for develowithpassion_fakes when working with rSpec}
   s.description = %q{Faking library that allows inspection of received calls after they have been made. Also supports tracking calls with multiple argument sets.}
-  s.rubyforge_project = "developwithpassion_fakes-rspec"
+  s.rubyforge_project = "fakes-rspec"
 
   s.files         = `git ls-files | grep -P "^(dev|lib)"`.split("\n")
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
@@ -23,6 +23,6 @@ Gem::Specification.new do |s|
   s.add_development_dependency "rspec"
   s.add_development_dependency "guard"
   s.add_development_dependency "guard-rspec"
-  s.add_runtime_dependency "developwithpassion_fakes"
+  s.add_runtime_dependency "fakes"
   s.add_runtime_dependency "rspec"
 end

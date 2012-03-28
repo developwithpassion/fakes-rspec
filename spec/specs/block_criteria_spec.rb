@@ -1,7 +1,7 @@
 require 'spec_helper'
 
-module RSpec
-  module Fakes
+module Fakes
+  module RSpec
     describe BlockCriteria do
       context "when matching" do
         subject{BlockCriteria.new(lambda{|item| return item == 1})}

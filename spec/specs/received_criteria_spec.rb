@@ -1,7 +1,7 @@
 require 'spec_helper'
 
-module RSpec
-  module Fakes
+module Fakes
+  module RSpec
     describe ReceivedCriteria do
       context "when matching a call made without arguments" do
         it "should match if the call was made" do

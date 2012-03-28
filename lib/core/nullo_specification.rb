@@ -1,5 +1,5 @@
-module RSpec
-  module Fakes
+module Fakes
+  module RSpec
     class NulloSpecification
       include Singleton
       def is_satisfied_by(item)

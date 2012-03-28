@@ -1,5 +1,5 @@
-module RSpec
-  module Fakes
+module Fakes
+  module RSpec
     class BlockCriteria
       def initialize(condition_block)
         @condition_block = condition_block

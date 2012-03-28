@@ -1,5 +1,5 @@
-module RSpec
-  module Fakes
+module Fakes
+  module RSpec
     class Occurances
       class << self
         def from_block(the_block)

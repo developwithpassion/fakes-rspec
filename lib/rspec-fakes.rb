@@ -1,4 +1,4 @@
-require 'developwithpassion_fakes'
+require 'fakes'
 require 'rspec'
 
 require 'singleton'

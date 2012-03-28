@@ -1,16 +1,16 @@
-#rspec-fakes
+#fakes-rspec
 
-This is a library to aid in the usage of [developwithpassion_fakes](http://github.com/developwithpassion/developwithpassion_fakes) when using [RSpec](https://github.com/rspec/rspec). It adds a bunch of convienience methods and matchers to aid in the usage of the heavily AAA style isolation library.
+This is a library to aid in the usage of [fakes](http://github.com/developwithpassion/fakes) when using [RSpec](https://github.com/rspec/rspec). It adds a bunch of convienience methods and matchers to aid in the usage of the heavily AAA style isolation library.
 
 ##Installation
 ```bash
-gem install rspec-fakes
+gem install fakes-rspec
 ```
 Or (preferably using bundler), in your gemfile:
 
 ```ruby
 source "http://rubygems.org"
-gem 'rspec-fakes'
+gem 'fakes-rspec'
 ```
 
 When you install the gem it will install the rspec gem also, so you will be immediately ready to go.

@@ -1,7 +1,7 @@
 require 'spec_helper'
 
-module RSpec
-  module Fakes
+module Fakes
+  module RSpec
     describe ReceivedOccurencesCriteria do
       let(:original){fake}
       let(:occurence){fake}
