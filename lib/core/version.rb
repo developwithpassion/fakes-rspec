@@ -1,7 +1,5 @@
-module DevelopWithPassion
+module RSpec
   module Fakes
-    module RSpec
-      VERSION = "0.0.8"
-    end
+    VERSION = "0.0.8"
   end
 end

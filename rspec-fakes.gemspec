@@ -3,8 +3,8 @@ $:.push File.expand_path("../lib",__FILE__)
 require "core/version"
 
 Gem::Specification.new do |s|
-  s.name        = "developwithpassion_fakes-rspec"
-  s.version     = DevelopWithPassion::Fakes::RSpec::VERSION
+  s.name        = "rspec-fakes"
+  s.version     = RSpec::Fakes::VERSION
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["Develop With Passion®"]
   s.email       = ["open_source@developwithpassion.com"]
