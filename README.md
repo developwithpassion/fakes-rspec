@@ -4,13 +4,13 @@ This is a library to aid in the usage of [developwithpassion_fakes](http://githu
 
 ##Installation
 ```bash
-gem install developwithpassion_fakes-rspec
+gem install rspec-fakes
 ```
 Or (preferably using bundler), in your gemfile:
 
 ```ruby
 source "http://rubygems.org"
-gem 'developwithpassion_fakes-rspec'
+gem 'rspec-fakes'
 ```
 
 When you install the gem it will install the rspec gem also, so you will be immediately ready to go.
