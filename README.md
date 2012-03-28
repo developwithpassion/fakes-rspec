@@ -105,7 +105,7 @@ it "should be able to determine if a call was made on a fake" do
   the_fake = fake
   fake.hello("World")
 
-  fake.should have_received_occurences(once,:hello) #true
+  fake.should have_received(:hello).once #true
 end
 ```
 
@@ -115,8 +115,8 @@ it "should be able to determine if a call was made on a fake" do
   the_fake = fake
   fake.hello("World")
 
-  fake.should have_received_occurences(once,:hello,"World") #true
-  fake.should have_received_occurences(once,:hello,"Earth") #false
+  fake.should have_received(:hello,"World").once #true
+  fake.should have_received(:hello,"Earth").once #false
 end
 ```
 
@@ -128,14 +128,12 @@ it "should be able to determine if a call was made on a fake" do
   the_fake = fake
   fake.hello("World")
 
-  fake.should_not have_received_occurences(twice,:hello,"World") #true
-  fake.should_not have_received_occurences(twice,:hello) #true
+  fake.should_not have_received(:hello,"World").twice #true
+  fake.should_not have_received(:hello).twice #true
 end
 ```
 
-The first argument to have_received_occurences just needs to be an item that responds to the method: is_satisfied_by(count).
-
-The library adds a couple of convenience factory methods to the ExampleGroup class,to create the match specifications:
+After calling have_received, you can specify occurences using one of the following methods:
 
 * once
 * twice
@@ -157,7 +155,7 @@ it "should be able to determine if a call was made on a fake" do
   fake.hello("World")
   fake.hello("Again")
 
-  fake.should have_received_occurences(occurs(|number| (1..3) === number),:hello) #true
+  fake.should have_received(,:hello).occurs(lamdba{|number| (1..3) === number}) #true
 end
 ```
 
