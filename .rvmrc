@@ -1,1 +1,1 @@
-rvm 1.9.3@rspec-fakes --create
+rvm 1.9.3@fakes-rspec --create
