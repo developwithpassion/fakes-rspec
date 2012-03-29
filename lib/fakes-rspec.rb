@@ -1,7 +1,7 @@
 require 'fakes'
 require 'rspec'
-
 require 'singleton'
+
 require 'core/block_criteria'
 require 'core/nullo_specification'
 require 'core/occurances'
