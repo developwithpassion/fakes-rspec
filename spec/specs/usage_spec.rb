@@ -93,5 +93,20 @@ describe "using the rspec extensions" do
     item.should have_received(:hello).at_most(1)
     item.should_not have_received(:goodbye).at_most(1)
   end
+  context "using the arg matching style" do
+    it "should be able to determing if a call was made using arg matchers" do
+      item = fake
+      item.hello("Yes")
+
+      item.should have_received(:hello,matches.any)
+    end
+
+    it "should be able to determing if a call was made using a combination of arg matchers and explicit values" do
+      item = fake
+      item.hello("Yes",2)
+
+      item.should have_received(:hello,matches.regex(/Y/),2)
+    end
+  end
 end
 
