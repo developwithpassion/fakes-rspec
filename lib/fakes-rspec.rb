@@ -9,3 +9,8 @@ require 'core/occurances'
 require 'core/received_occurances_criteria'
 require 'core/received_criteria'
 
+RSpec.configure do |config|
+  config.after(:each) do
+    reset_fake_classes
+  end
+end
