@@ -108,5 +108,21 @@ describe "using the rspec extensions" do
       item.should have_received(:hello,matches.regex(/Y/),2)
     end
   end
+  context "using class swapping" do
+    it "should be able to fake out behaviour of singleton methods" do
+      fake_class Dir
+
+      Dir.stub(:exist?).and_return false
+
+      Dir.exist('/').should be_false
+    end
+
+    it "should be able to determing if a call was made using a combination of arg matchers and explicit values" do
+      item = fake
+      item.hello("Yes",2)
+
+      item.should have_received(:hello,matches.regex(/Y/),2)
+    end
+  end
 end
 
