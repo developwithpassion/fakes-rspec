@@ -13,7 +13,7 @@ Gem::Specification.new do |s|
   s.description = %q{Faking library that allows inspection of received calls after they have been made. Also supports tracking calls with multiple argument sets.}
   s.rubyforge_project = "fakes-rspec"
 
-  s.files         = `git ls-files | grep -P "^(dev|lib)"`.split("\n")
+  s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
   s.require_paths = ["lib"]
 
