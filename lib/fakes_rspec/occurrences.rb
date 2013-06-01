@@ -1,6 +1,6 @@
 module Fakes
   module RSpec
-    class Occurances
+    class Occurrences
       class << self
         def from_block(the_block)
           return BlockCriteria.new(the_block)
@@ -13,13 +13,13 @@ module Fakes
         end
 
         def at_least(times)
-          condition = lambda { |occurences| occurences >= times }
+          condition = lambda { |occurrences| occurrences >= times }
 
           return from_block(condition)
         end
 
         def at_most(times)
-          condition = lambda { |occurences| occurences <= times }
+          condition = lambda { |occurrences| occurrences <= times }
 
           return from_block(condition)
         end
