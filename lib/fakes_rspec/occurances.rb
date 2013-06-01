@@ -5,14 +5,23 @@ module Fakes
         def from_block(the_block)
           return BlockCriteria.new(the_block)
         end
+
         def exact(times)
-          return from_block(lambda{|occurances| return occurances == times})
+          condition =  lambda { |occurances| occurances == times }
+
+          return from_block(condition)
         end
+
         def at_least(times)
-          return from_block(lambda { |occurences| return occurences >= times})
+          condition = lambda { |occurences| occurences >= times }
+
+          return from_block(condition)
         end
+
         def at_most(times)
-          return from_block(lambda { |occurences| return occurences <= times})
+          condition = lambda { |occurences| occurences <= times }
+
+          return from_block(condition)
         end
       end
     end
