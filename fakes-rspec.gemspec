@@ -18,10 +18,9 @@ Gem::Specification.new do |s|
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
   s.require_paths = ["lib"]
 
-  s.add_development_dependency "rake"
-  s.add_development_dependency "rspec"
-  s.add_development_dependency "guard"
-  s.add_development_dependency "guard-rspec"
-  s.add_runtime_dependency "fakes"
-  s.add_runtime_dependency "rspec"
+  s.add_development_dependency('rake', "~> 0.9.0")
+  s.add_development_dependency('guard', "~> 2.6.1")
+  s.add_development_dependency('guard-rspec', "~> 4.2.9")
+  s.add_runtime_dependency('fakes', "~> 1.1.4")
+  s.add_runtime_dependency('rspec', "~> 2.14.1")
 end
