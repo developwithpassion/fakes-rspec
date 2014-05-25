@@ -6,6 +6,7 @@ Gem::Specification.new do |s|
   s.name        = "fakes-rspec"
   s.version     = Fakes::RSpec::VERSION
   s.platform    = Gem::Platform::RUBY
+  s.license     = 'MIT'
   s.authors     = ["Develop With Passion®"]
   s.email       = ["open_source@developwithpassion.com"]
   s.homepage    = "http://www.developwithpassion.com"
