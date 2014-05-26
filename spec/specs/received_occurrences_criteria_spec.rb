@@ -18,8 +18,8 @@ module Fakes
             subject.is_satisfied_by(the_arg).should be_false
           end
           it "should not use the occurrence or the call" do
-            occurrence.should_not have_received(:is_satified_by)
-            the_call.should_not have_received(:called_with)
+            occurrence.should_not have_received_message(:is_satisfied_by)
+            the_call.should_not have_received_message(:called_with)
           end
         end
         context "and the original criteria is satisfied" do

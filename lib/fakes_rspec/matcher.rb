@@ -6,7 +6,7 @@ module RSpec
     return Fakes::RSpec::ReceivedOccurrencesCriteria.new(create_received_criteria_from(the_call),the_call,occurence)
   end
 
-  Matchers.define :have_received do|symbol,*args|
+  Matchers.define :have_received_message do|symbol,*args|
     @occurence_spec = Fakes::RSpec::NulloSpecification.instance
 
     chain :once do
