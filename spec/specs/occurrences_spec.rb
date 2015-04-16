@@ -7,8 +7,8 @@ module Fakes
         subject{Occurrences.exact(1)}
 
         it "should create a matcher that matches an exact number of occurrences" do
-          subject.is_satisfied_by(1).should be_true
-          subject.is_satisfied_by(2).should be_false
+          expect(subject.is_satisfied_by(1)).to be_truthy
+          expect(subject.is_satisfied_by(2)).to be_falsy
         end
       end
 
@@ -16,19 +16,19 @@ module Fakes
         subject{Occurrences.at_least(3)}
 
         it "should create a matcher that matches an exact number of occurrences" do
-          subject.is_satisfied_by(3).should be_true
-          subject.is_satisfied_by(4).should be_true
-          subject.is_satisfied_by(2).should be_false
+          expect(subject.is_satisfied_by(3)).to be_truthy
+          expect(subject.is_satisfied_by(4)).to be_truthy
+          expect(subject.is_satisfied_by(2)).to be_falsy
         end
       end
       context "when creating an at most occurrence matcher" do
         subject{Occurrences.at_most(3)}
 
         it "should create a matcher that matches an exact number of occurrences" do
-          subject.is_satisfied_by(3).should be_true
-          subject.is_satisfied_by(2).should be_true
-          subject.is_satisfied_by(1).should be_true
-          subject.is_satisfied_by(4).should be_false
+          expect(subject.is_satisfied_by(3)).to be_truthy
+          expect(subject.is_satisfied_by(2)).to be_truthy
+          expect(subject.is_satisfied_by(1)).to be_truthy
+          expect(subject.is_satisfied_by(4)).to be_falsy
         end
       end
     end

@@ -10,7 +10,7 @@ module Fakes
 
           sut = ReceivedCriteria.new(item.received(:hello))
 
-          sut.is_satisfied_by.should be_true
+          expect(sut.is_satisfied_by).to be_truthy
         end
       end
       context "when matching a call made with arguments" do
@@ -21,16 +21,16 @@ module Fakes
         end
         context "and we care about the arguments it was called with" do
           it "should match if it received the correct call" do
-            @sut.is_satisfied_by("world").should be_true
+            expect(@sut.is_satisfied_by("world")).to be_truthy
           end
           it "should not match if the arguments provided are not in the call history" do
-            @sut.is_satisfied_by("yo").should be_false
+            expect(@sut.is_satisfied_by("yo")).to be_falsy
           end
 
         end
         context "and we don't care about the arguments it was called with" do
           it "should match if it received a call to the method" do
-            @sut.is_satisfied_by.should be_true
+            expect(@sut.is_satisfied_by).to be_truthy
           end
         end
       end

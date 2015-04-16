@@ -8,18 +8,20 @@ module Fakes
       let(:the_call){fake}
       let(:arg_set){fake}
       let(:the_arg){1}
+
       subject{ReceivedOccurrencesCriteria.new(original,the_call,occurrence)}
+
       context "when matching a call made" do
         context "and the original criteria is not satisfied" do
           before (:each) do
             original.stub(:is_satisfied_by).with(the_arg).and_return(false)
           end
           it "should not match" do
-            subject.is_satisfied_by(the_arg).should be_false
+            expect(subject.is_satisfied_by(the_arg)).to be_falsy
           end
           it "should not use the occurrence or the call" do
-            occurrence.should_not have_received_message(:is_satisfied_by)
-            the_call.should_not have_received_message(:called_with)
+            expect(occurrence.received?(:is_satisfied_by)).to be_falsy
+            expect(the_call.received?(:called_with)).to be_falsy
           end
         end
         context "and the original criteria is satisfied" do
@@ -38,7 +40,7 @@ module Fakes
               @result = subject.is_satisfied_by
             end
             it "should match if the occurrence matches the total number of invocations" do
-              @result.should be_true
+              expect(@result).to be_truthy
             end
           end
           context "and its occurrence is satisfied" do
@@ -46,7 +48,7 @@ module Fakes
               occurrence.stub(:is_satisfied_by).with(1).and_return(true)
             end
             it "should match" do
-              subject.is_satisfied_by(the_arg).should be_true
+              expect(subject.is_satisfied_by(the_arg)).to be_truthy
             end
           end
           context "and its occurrence is not satisfied" do
@@ -54,7 +56,7 @@ module Fakes
               occurrence.stub(:is_satisfied_by).with(1).and_return(false)
             end
             it "should not match" do
-              subject.is_satisfied_by(the_arg).should be_false
+              expect(subject.is_satisfied_by(the_arg)).to be_falsy
             end
           end
         end
