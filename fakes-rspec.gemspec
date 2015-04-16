@@ -22,5 +22,5 @@ Gem::Specification.new do |s|
   s.add_development_dependency('guard', "~> 2.6.1")
   s.add_development_dependency('guard-rspec', "~> 4.2.9")
   s.add_runtime_dependency('fakes', "~> 1.1.4")
-  s.add_runtime_dependency('rspec', "~> 2.14.1")
+  s.add_runtime_dependency('rspec', "~> 3.0")
 end
