@@ -2,9 +2,13 @@ module RSpec
   def self.create_received_criteria_from(the_call)
     return Fakes::RSpec::ReceivedCriteria.new(the_call)
   end
-  def self.create_received_occurences_criteria_from(the_call,occurence)
-    return Fakes::RSpec::ReceivedOccurrencesCriteria.new(create_received_criteria_from(the_call),the_call,occurence)
+
+  def self.create_received_occurences_criteria_from(the_call, occurence)
+    occurence_spec = occurence.nil? ? Fakes::RSpec::NulloSpecification.instance : occurence
+
+    return Fakes::RSpec::ReceivedOccurrencesCriteria.new(create_received_criteria_from(the_call),the_call,occurence_spec)
   end
+
 
   Matchers.define :have_received_message do|symbol,*args|
     @occurence_spec = Fakes::RSpec::NulloSpecification.instance
@@ -39,8 +43,11 @@ module RSpec
     chain :occurs do|the_proc|
       @occurence_spec = Fakes::RSpec::Occurrences.from_block(the_proc)
     end
+
     match do|the_fake|
-      RSpec.create_received_occurences_criteria_from(the_fake.received(symbol),@occurence_spec).is_satisfied_by(*args)
+      criteria = RSpec.create_received_occurences_criteria_from(the_fake.received(symbol),@occurence_spec)
+
+      criteria.is_satisfied_by(*args)
     end
   end
 end
