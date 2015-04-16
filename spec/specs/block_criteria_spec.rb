@@ -6,8 +6,8 @@ module Fakes
       context "when matching" do
         subject{BlockCriteria.new(lambda{|item| return item == 1})}
         it "should match if its block returns true" do
-          subject.is_satisfied_by(1).should be_true
-          subject.is_satisfied_by(2).should be_false
+          expect(subject.is_satisfied_by(1)).to be_truthy
+          expect(subject.is_satisfied_by(2)).to be_falsy
         end
       end
     end
